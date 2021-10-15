@@ -21,6 +21,7 @@ import com.example.bai1.home.MovieItemListener;
 import com.example.bai1.home.adapter.MoviesAdapter;
 import com.example.bai1.home.models.Results;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,7 +29,7 @@ public class PopularFragment extends Fragment implements MovieItemListener {
     private FragmentPopularBinding binding;
     private View mView;
     private HomeViewModel homeViewModel;
-    private List<Results> movieList;
+    private List<Results> movieList = new ArrayList<>();
     private RecyclerView rcvMovies;
     private MoviesAdapter moviesAdapter;
 
@@ -53,13 +54,16 @@ public class PopularFragment extends Fragment implements MovieItemListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
+        observeViewModel();
+        initRecyclerView();
     }
 
     public void observeViewModel() {
         homeViewModel.fetchPopularMovies(Constants.API_KEY, 1);
-        homeViewModel.getPopularMutableLiveData().observe(this, resultResponse -> {
+        homeViewModel.getPopularMutableLiveData().observe(requireActivity(), resultResponse -> {
             if (resultResponse.getResults() != null && resultResponse.getResults().size() > 0) {
                 movieList.addAll(resultResponse.getResults());
+                moviesAdapter.notifyDataSetChanged();
             }
         });
     }

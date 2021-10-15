@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         initView();
         addTabs(mViewPager);
         tabLayout.setupWithViewPager(mViewPager);
+        initActions();
     }
 
     private void initView() {

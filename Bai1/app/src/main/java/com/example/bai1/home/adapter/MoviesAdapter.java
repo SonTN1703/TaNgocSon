@@ -4,9 +4,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bai1.BR;
+import com.example.bai1.R;
 import com.example.bai1.base.BaseViewHolderBinding;
 import com.example.bai1.databinding.ItemMovieBinding;
 import com.example.bai1.home.MovieItemListener;
@@ -27,7 +29,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<BaseViewHolderBinding> {
     @Override
     public BaseViewHolderBinding onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        return null;
+        ItemMovieBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_movie, parent,false);
+        return new MoviesHolder(binding);
     }
 
     @Override
