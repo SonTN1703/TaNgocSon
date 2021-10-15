@@ -14,13 +14,13 @@ public class DetailFilm {
     private String backdropPath;
     @SerializedName("belongs_to_collection")
     @Expose
-    private com.example.bai1training.detailFilm.models.BelongsToCollection belongsToCollection;
+    private BelongsToCollection belongsToCollection;
     @SerializedName("budget")
     @Expose
     private Integer budget;
     @SerializedName("genres")
     @Expose
-    private List<com.example.bai1training.detailFilm.models.Genre> genres = null;
+    private List<Genre> genres = null;
     @SerializedName("homepage")
     @Expose
     private String homepage;
@@ -47,10 +47,10 @@ public class DetailFilm {
     private String posterPath;
     @SerializedName("production_companies")
     @Expose
-    private List<com.example.bai1training.detailFilm.models.ProductionCompany> productionCompanies = null;
+    private List<ProductionCompany> productionCompanies = null;
     @SerializedName("production_countries")
     @Expose
-    private List<com.example.bai1training.detailFilm.models.ProductionCountry> productionCountries = null;
+    private List<ProductionCountry> productionCountries = null;
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
@@ -98,11 +98,11 @@ public class DetailFilm {
         this.backdropPath = backdropPath;
     }
 
-    public com.example.bai1training.detailFilm.models.BelongsToCollection getBelongsToCollection() {
+    public BelongsToCollection getBelongsToCollection() {
         return belongsToCollection;
     }
 
-    public void setBelongsToCollection(com.example.bai1training.detailFilm.models.BelongsToCollection belongsToCollection) {
+    public void setBelongsToCollection(BelongsToCollection belongsToCollection) {
         this.belongsToCollection = belongsToCollection;
     }
 
@@ -114,12 +114,20 @@ public class DetailFilm {
         this.budget = budget;
     }
 
-    public List<com.example.bai1training.detailFilm.models.Genre> getGenres() {
+    public List<Genre> getGenres() {
         return genres;
     }
 
-    public void setGenres(List<com.example.bai1training.detailFilm.models.Genre> genres) {
+    public void setGenres(List<Genre> genres) {
         this.genres = genres;
+    }
+
+    public void setProductionCompanies(List<ProductionCompany> productionCompanies) {
+        this.productionCompanies = productionCompanies;
+    }
+
+    public void setProductionCountries(List<ProductionCountry> productionCountries) {
+        this.productionCountries = productionCountries;
     }
 
     public String getHomepage() {
@@ -186,21 +194,15 @@ public class DetailFilm {
         this.posterPath = posterPath;
     }
 
-    public List<com.example.bai1training.detailFilm.models.ProductionCompany> getProductionCompanies() {
+    public List<ProductionCompany> getProductionCompanies() {
         return productionCompanies;
     }
 
-    public void setProductionCompanies(List<com.example.bai1training.detailFilm.models.ProductionCompany> productionCompanies) {
-        this.productionCompanies = productionCompanies;
-    }
 
-    public List<com.example.bai1training.detailFilm.models.ProductionCountry> getProductionCountries() {
+    public List<ProductionCountry> getProductionCountries() {
         return productionCountries;
     }
 
-    public void setProductionCountries(List<com.example.bai1training.detailFilm.models.ProductionCountry> productionCountries) {
-        this.productionCountries = productionCountries;
-    }
 
     public String getReleaseDate() {
         return releaseDate;

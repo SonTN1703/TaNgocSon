@@ -1,5 +1,6 @@
 package com.example.bai1.home.models;
 
+import com.example.bai1.Constants;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -58,7 +59,7 @@ public class Results {
     }
 
     public String getBackdropPath() {
-        return backdropPath;
+        return Constants.HEADER_URL_IMAGE + backdropPath;
     }
 
     public void setBackdropPath(String backdropPath) {

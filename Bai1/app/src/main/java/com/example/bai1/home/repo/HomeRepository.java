@@ -24,7 +24,7 @@ public class HomeRepository extends BaseRepository {
     private MutableLiveData<ResultResponse> mUpcomingLiveData = new MutableLiveData<>();
 
     public void fetchPopularMovies(String apiKey, int page) {
-        compositeDisposable.add(movieAPI.getPopularFilmResponse(apiKey, 1)
+        compositeDisposable.add(movieAPI.getPopularFilmResponse(apiKey, page)
                 .timeout(30000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribe(resultResponse -> {
@@ -38,7 +38,7 @@ public class HomeRepository extends BaseRepository {
     }
 
     public void fetchTopRateMovies(String apiKey, int page) {
-        compositeDisposable.add(movieAPI.getTopRatedFilmRespone(apiKey, 1)
+        compositeDisposable.add(movieAPI.getTopRatedFilmRespone(apiKey, page)
                 .timeout(30000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribe(resultResponse -> {
@@ -51,7 +51,7 @@ public class HomeRepository extends BaseRepository {
     }
 
     public void fetchUpcomingMovies(String apiKey, int page) {
-        compositeDisposable.add(movieAPI.getUpcomingFilmRespone(apiKey, 1)
+        compositeDisposable.add(movieAPI.getUpcomingFilmRespone(apiKey, page)
                 .timeout(30000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribe(resultResponse -> {
@@ -64,7 +64,7 @@ public class HomeRepository extends BaseRepository {
     }
 
     public void fetchNowPlayingMovies(String apiKey, int page) {
-        compositeDisposable.add(movieAPI.getNowPlayingFilmRespone(apiKey, 1)
+        compositeDisposable.add(movieAPI.getNowPlayingFilmRespone(apiKey, page)
                 .timeout(30000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .subscribe(resultResponse -> {
