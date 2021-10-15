@@ -1,11 +1,8 @@
 package com.example.bai1.network;
 
 import android.content.Context;
-import android.provider.SyncStateContract;
 
 import com.example.bai1.Constants;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
