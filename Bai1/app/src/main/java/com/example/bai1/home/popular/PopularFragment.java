@@ -76,7 +76,6 @@ public class PopularFragment extends Fragment implements MovieItemListener {
         moviesAdapter = new MoviesAdapter(movieList, this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(), 2, RecyclerView.VERTICAL, false);
         rcvMovies.setLayoutManager(gridLayoutManager);
-        rcvMovies.setItemAnimator(new DefaultItemAnimator());
         rcvMovies.setAdapter(moviesAdapter);
     }
 
